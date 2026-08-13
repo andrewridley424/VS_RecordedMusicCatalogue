@@ -1,0 +1,12 @@
+﻿{
+  "primaryBgr": "#2d425b",
+  "primaryBtnBgr": "#29594f",
+  "primaryBtnFgr": "white",
+  "primaryFgr": "white",
+  "secondaryBgr": "#202d40",
+  "secondaryBtnBgr": "indianRed",
+  "secondaryBtnFgr": "white",
+  "tertiaryBtnBgr": "#e88f41",
+  "tertiaryBtnFgr": "white",
+  "tertiaryHeaderFgr": "#e88f41"
+}

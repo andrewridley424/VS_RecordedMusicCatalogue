@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using RecordedMusicCatalogue.DataAccessLayer.Contracts;
+﻿using RecordedMusicCatalogue.DataAccessLayer.Contracts;
 using RecordedMusicCatalogue.DomainModel.Models;
 
 namespace RecordedMusicCatalogue.UI
@@ -9,8 +8,7 @@ namespace RecordedMusicCatalogue.UI
         readonly IVinylRecordRepository _vinylRecordRepository;
         readonly ITracksRepository _tracksRepository;
 
-        private readonly IServiceProvider _serviceProvider;
-        public VinylRecordCollection(IVinylRecordRepository vinylRecordRepository, ITracksRepository tracksRepository)
+      public VinylRecordCollection(IVinylRecordRepository vinylRecordRepository, ITracksRepository tracksRepository)
         {
             InitializeComponent();
             _vinylRecordRepository = vinylRecordRepository; 
@@ -33,15 +31,16 @@ namespace RecordedMusicCatalogue.UI
 
             VinylRecordCollectionGrid.AutoGenerateColumns = false;
 
-            DataGridViewColumn[] columns = new DataGridViewColumn[7];
+            DataGridViewColumn[] columns = new DataGridViewColumn[8];
 
             columns[0] = new DataGridViewTextBoxColumn() { DataPropertyName = "Id", Visible = false };
             columns[1] = new DataGridViewTextBoxColumn() { DataPropertyName = "Title", HeaderText = "Title" };
             columns[2] = new DataGridViewTextBoxColumn() { DataPropertyName = "Artist", HeaderText = "Artist" };
-            columns[3] = new DataGridViewTextBoxColumn() { DataPropertyName = "Genre", HeaderText = "Genre" };
-            columns[4] = new DataGridViewTextBoxColumn() { DataPropertyName = "Rpm", HeaderText = "RPM" };
-            columns[5] = new DataGridViewTextBoxColumn() { DataPropertyName = "Size", HeaderText = "Size" };
-           columns[6] = new DataGridViewButtonColumn()
+            columns[3] = new DataGridViewTextBoxColumn() {DataPropertyName = "Label", HeaderText = "Label" }; 
+            columns[4] = new DataGridViewTextBoxColumn() { DataPropertyName = "Genre", HeaderText = "Genre" };
+            columns[5] = new DataGridViewTextBoxColumn() { DataPropertyName = "Rpm", HeaderText = "RPM" };
+            columns[6] = new DataGridViewTextBoxColumn() { DataPropertyName = "Size", HeaderText = "Size" };
+           columns[7] = new DataGridViewButtonColumn()
             {
                 Text = "Tracks",
                 Name = "TracksBtn",
@@ -64,11 +63,11 @@ namespace RecordedMusicCatalogue.UI
         {
             if (e.RowIndex >= 0 && VinylRecordCollectionGrid.CurrentCell is DataGridViewButtonCell)
             {
-               VinylRecord clickedRecord = (VinylRecord)VinylRecordCollectionGrid.Rows[e.RowIndex].DataBoundItem;
-                if (e.ColumnIndex.Equals(6))
+               VinylRecord clickedVinylRecord = (VinylRecord)VinylRecordCollectionGrid.Rows[e.RowIndex].DataBoundItem;
+                if (e.ColumnIndex.Equals(7))
                 {
-                   TracksForm tracksForm = new TracksForm(_tracksRepository, clickedRecord);
-                    tracksForm.ShowDialog();
+                   TracksForm tracksForm = new TracksForm(_tracksRepository, clickedVinylRecord);
+                   tracksForm.ShowDialog();
                 }
                 
                /* else if (e.RowIndex == 0 && e.ColumnIndex == 1)

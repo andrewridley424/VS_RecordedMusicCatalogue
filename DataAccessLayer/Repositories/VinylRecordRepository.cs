@@ -1,12 +1,8 @@
 ﻿using RecordedMusicCatalogue.DataAccessLayer.Contracts;
 using RecordedMusicCatalogue.DomainModel.Models;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 using Dapper;
 using System.Data.SqlClient;
-using System.Globalization;
 
 namespace RecordedMusicCatalogue.DataAccessLayer.Repositories
 {
@@ -14,7 +10,7 @@ namespace RecordedMusicCatalogue.DataAccessLayer.Repositories
     {
         public async Task<List<VinylRecord>> GetVinylRecords()
         {
-           string query = "select id, title, artist, genre.name as genre, rpm, size from vinyl_records" +
+           string query = "select id, title, artist, label, genre.name as genre, rpm, size from vinyl_records" +
             " inner join genre on vinyl_records.genre_id = genre.genre_id";
            
             try

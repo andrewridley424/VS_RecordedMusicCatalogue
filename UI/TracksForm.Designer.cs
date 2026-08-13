@@ -34,13 +34,16 @@
             // 
             // TracksDataGrid
             // 
+            TracksDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            TracksDataGrid.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             TracksDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             TracksDataGrid.Dock = DockStyle.Fill;
-            TracksDataGrid.Location = new Point(0, 0);
+            TracksDataGrid.Location = new Point(50, 0);
             TracksDataGrid.Margin = new Padding(3, 50, 50, 50);
             TracksDataGrid.Name = "TracksDataGrid";
             TracksDataGrid.RowHeadersWidth = 82;
-            TracksDataGrid.Size = new Size(800, 450);
+            TracksDataGrid.ScrollBars = ScrollBars.Vertical;
+            TracksDataGrid.Size = new Size(700, 400);
             TracksDataGrid.TabIndex = 0;
             // 
             // TracksForm
@@ -50,6 +53,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(TracksDataGrid);
             Name = "TracksForm";
+            Padding = new Padding(50, 0, 50, 50);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Album Tracks";
             Load += TracksForm_Load;
             ((System.ComponentModel.ISupportInitialize)TracksDataGrid).EndInit();

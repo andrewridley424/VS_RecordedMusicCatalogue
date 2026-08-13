@@ -29,25 +29,61 @@
         private void InitializeComponent()
         {
             VinylRecordCollectionBtn = new Button();
+            CDCollectionBtn = new Button();
+            CassetteCollectionBtn = new Button();
             SuspendLayout();
             // 
             // VinylRecordCollectionBtn
             // 
-            VinylRecordCollectionBtn.Location = new Point(93, 90);
+            VinylRecordCollectionBtn.FlatAppearance.BorderSize = 0;
+            VinylRecordCollectionBtn.FlatStyle = FlatStyle.Flat;
+            VinylRecordCollectionBtn.Font = new Font("Segoe UI", 12F);
+            VinylRecordCollectionBtn.Location = new Point(82, 59);
             VinylRecordCollectionBtn.Name = "VinylRecordCollectionBtn";
-            VinylRecordCollectionBtn.Size = new Size(328, 66);
+            VinylRecordCollectionBtn.Size = new Size(382, 80);
             VinylRecordCollectionBtn.TabIndex = 0;
             VinylRecordCollectionBtn.Text = "Vinyl Record Collection";
             VinylRecordCollectionBtn.UseVisualStyleBackColor = true;
             VinylRecordCollectionBtn.Click += VinylRecordCollectionBtn_Click;
             // 
+            // CDCollectionBtn
+            // 
+            CDCollectionBtn.FlatAppearance.BorderSize = 0;
+            CDCollectionBtn.FlatStyle = FlatStyle.Flat;
+            CDCollectionBtn.Font = new Font("Segoe UI", 12F);
+            CDCollectionBtn.ForeColor = SystemColors.ControlLight;
+            CDCollectionBtn.Location = new Point(82, 172);
+            CDCollectionBtn.Name = "CDCollectionBtn";
+            CDCollectionBtn.Size = new Size(382, 80);
+            CDCollectionBtn.TabIndex = 1;
+            CDCollectionBtn.Text = "CD Collection";
+            CDCollectionBtn.UseVisualStyleBackColor = true;
+            // 
+            // CassetteCollectionBtn
+            // 
+            CassetteCollectionBtn.BackgroundImageLayout = ImageLayout.None;
+            CassetteCollectionBtn.FlatAppearance.BorderSize = 0;
+            CassetteCollectionBtn.FlatStyle = FlatStyle.Flat;
+            CassetteCollectionBtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CassetteCollectionBtn.Location = new Point(82, 292);
+            CassetteCollectionBtn.Name = "CassetteCollectionBtn";
+            CassetteCollectionBtn.Size = new Size(382, 80);
+            CassetteCollectionBtn.TabIndex = 2;
+            CassetteCollectionBtn.Text = "Cassette Collection";
+            CassetteCollectionBtn.UseVisualStyleBackColor = true;
+            // 
             // RecordedMusicCatalogueForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackgroundImageLayout = ImageLayout.None;
+            ClientSize = new Size(547, 532);
+            Controls.Add(CassetteCollectionBtn);
+            Controls.Add(CDCollectionBtn);
             Controls.Add(VinylRecordCollectionBtn);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "RecordedMusicCatalogueForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Recorded Music Catalogue";
             ResumeLayout(false);
         }
@@ -55,5 +91,7 @@
         #endregion
 
         private Button VinylRecordCollectionBtn;
+        private Button CDCollectionBtn;
+        private Button CassetteCollectionBtn;
     }
 }
