@@ -2,8 +2,8 @@
 
 namespace RecordedMusicCatalogue.DataAccessLayer.Contracts
 {
-   public interface ITracksRepository
+   public interface ICassetteRepository
     {
-        public Task<List<Track>> GetTracks(RecordedMusicAlbum album);
+        public Task<List<Cassette>> GetCassettes();
     }
 }

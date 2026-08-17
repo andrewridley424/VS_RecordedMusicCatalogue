@@ -25,9 +25,13 @@ namespace RecordedMusicCatalogue
 
             services.AddTransient<IVinylRecordRepository>(_ => new VinylRecordRepository());
             services.AddTransient<ITracksRepository>(_ => new TracksRepository());
+            services.AddTransient<ICassetteRepository>(_ => new CassetteRepository());
+            services.AddTransient<ICdRepository>(_ => new CdRepository());
 
             services.AddTransient<RecordedMusicCatalogueForm>();
             services.AddTransient<VinylRecordCollection>();
+            services.AddTransient<CassetteCollectionForm>();
+            services.AddTransient<CDCollectionForm>();
             services.AddTransient<TracksForm>();
                   
             return services;

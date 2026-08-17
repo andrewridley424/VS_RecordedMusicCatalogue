@@ -7,7 +7,7 @@ namespace RecordedMusicCatalogue
     public partial class RecordedMusicCatalogueForm : Form
     {
         private readonly IServiceProvider _serviceProvider;
-        
+
         public RecordedMusicCatalogueForm(IServiceProvider serviceProvider)
         {
             InitializeComponent();
@@ -17,11 +17,11 @@ namespace RecordedMusicCatalogue
 
         private void VinylRecordCollectionBtn_Click(object sender, EventArgs e)
         {
-            ShowForm(_serviceProvider.GetRequiredService<VinylRecordCollection>()) ;    
+            ShowForm(_serviceProvider.GetRequiredService<VinylRecordCollection>());
         }
         private static void ShowForm(Form form)
         {
-            form.ShowDialog();  
+            form.ShowDialog();
         }
         private void ApplyStyles()
         {
@@ -37,6 +37,16 @@ namespace RecordedMusicCatalogue
             this.CDCollectionBtn.ForeColor = Color.Wheat;
             this.CassetteCollectionBtn.BackColor = Color.FromArgb(91, 66, 45);
             this.CassetteCollectionBtn.ForeColor = Color.Wheat;
+        }
+
+        private void CassetteCollectionBtn_Click(object sender, EventArgs e)
+        {
+            ShowForm(_serviceProvider.GetRequiredService<CassetteCollectionForm>());
+        }
+
+        private void CDCollectionBtn_Click(object sender, EventArgs e)
+        {
+            ShowForm(_serviceProvider.GetRequiredService<CDCollectionForm>());
         }
     }
 }

@@ -7,13 +7,13 @@ namespace RecordedMusicCatalogue.UI
     public partial class TracksForm : Form
     {
         readonly ITracksRepository _tracksRepository;
-        private readonly VinylRecord _vinylRecord;
-        public  TracksForm(ITracksRepository tracksRepository, VinylRecord vinylRecord)
+        private readonly RecordedMusicAlbum _record;
+        public TracksForm(ITracksRepository tracksRepository, RecordedMusicAlbum record)
         {
             InitializeComponent();
             _tracksRepository = tracksRepository;
-            _vinylRecord = vinylRecord;
-            this.Text = _vinylRecord.Title + " Tracks";
+            _record = record;
+            this.Text = _record.Title + " Tracks";
         }
 
         private void TracksForm_Load(object sender, EventArgs e)
@@ -22,7 +22,12 @@ namespace RecordedMusicCatalogue.UI
            RefreshDataGrid();
         }
 
-        private async void RefreshDataGrid() => TracksDataGrid.DataSource = await _tracksRepository.GetTracks(_vinylRecord);
+        private async void RefreshDataGrid()
+        {
+            var recordedMusicAlbum = _record;
+            TracksDataGrid.DataSource = await _tracksRepository.GetTracks(recordedMusicAlbum);
+        }
+
         private void CustomizeGridAppearance()
         {
             TracksDataGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

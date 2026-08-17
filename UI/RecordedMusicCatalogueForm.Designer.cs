@@ -58,6 +58,7 @@
             CDCollectionBtn.TabIndex = 1;
             CDCollectionBtn.Text = "CD Collection";
             CDCollectionBtn.UseVisualStyleBackColor = true;
+            CDCollectionBtn.Click += CDCollectionBtn_Click;
             // 
             // CassetteCollectionBtn
             // 
@@ -71,6 +72,7 @@
             CassetteCollectionBtn.TabIndex = 2;
             CassetteCollectionBtn.Text = "Cassette Collection";
             CassetteCollectionBtn.UseVisualStyleBackColor = true;
+            CassetteCollectionBtn.Click += CassetteCollectionBtn_Click;
             // 
             // RecordedMusicCatalogueForm
             // 

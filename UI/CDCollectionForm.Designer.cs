@@ -1,6 +1,6 @@
 ﻿namespace RecordedMusicCatalogue.UI
 {
-    partial class VinylRecordCollection
+    partial class CDCollectionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,42 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            VinylRecordCollectionGrid = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)VinylRecordCollectionGrid).BeginInit();
+            CDDataGrid = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)CDDataGrid).BeginInit();
             SuspendLayout();
             // 
-            // VinylRecordCollectionGrid
+            // CDDataGrid
             // 
-            VinylRecordCollectionGrid.BorderStyle = BorderStyle.None;
-            VinylRecordCollectionGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            VinylRecordCollectionGrid.Dock = DockStyle.Fill;
-            VinylRecordCollectionGrid.Location = new Point(50, 0);
-            VinylRecordCollectionGrid.Margin = new Padding(3, 10, 3, 10);
-            VinylRecordCollectionGrid.Name = "VinylRecordCollectionGrid";
-            VinylRecordCollectionGrid.RowHeadersWidth = 82;
-            VinylRecordCollectionGrid.Size = new Size(1682, 579);
-            VinylRecordCollectionGrid.TabIndex = 0;
-            VinylRecordCollectionGrid.CellContentClick += VinylRecordCollectionGrid_CellClick;
+            CDDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CDDataGrid.Location = new Point(50, 0);
+            CDDataGrid.Margin = new Padding(3, 10, 3, 10);
+            CDDataGrid.Name = "CDDataGrid";
+            CDDataGrid.RowHeadersWidth = 82;
+            CDDataGrid.ScrollBars = ScrollBars.Vertical;
+            CDDataGrid.Size = new Size(1682, 579);
+            CDDataGrid.TabIndex = 0;
+            CDDataGrid.CellClick += CDDataGrid_CellClick;
             // 
-            // VinylRecordCollection
+            // CDCollectionForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(1782, 629);
-            Controls.Add(VinylRecordCollectionGrid);
+            Controls.Add(CDDataGrid);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "VinylRecordCollection";
+            Name = "CDCollectionForm";
             Padding = new Padding(50, 0, 50, 50);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "VinylRecordCollection";
-            Load += VinylRecordCollection_Load;
-            ((System.ComponentModel.ISupportInitialize)VinylRecordCollectionGrid).EndInit();
+            Text = "CD Collection";
+            Load += CDCollectionForm_Load_1;
+            ((System.ComponentModel.ISupportInitialize)CDDataGrid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView VinylRecordCollectionGrid;
+        private DataGridView CDDataGrid;
     }
 }

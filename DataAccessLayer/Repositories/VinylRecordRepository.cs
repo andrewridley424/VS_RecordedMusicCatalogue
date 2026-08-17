@@ -10,7 +10,7 @@ namespace RecordedMusicCatalogue.DataAccessLayer.Repositories
     {
         public async Task<List<VinylRecord>> GetVinylRecords()
         {
-           string query = "select id, title, artist, label, genre.name as genre, rpm, size from vinyl_records" +
+           string query = "select id, title, artist, label, genre.name as genre, rpm, size, number_of_discs as NumberOfDiscs from vinyl_records" +
             " inner join genre on vinyl_records.genre_id = genre.genre_id";
            
             try
